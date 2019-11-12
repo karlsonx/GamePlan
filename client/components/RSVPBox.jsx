@@ -33,6 +33,31 @@ class RSVPBox extends Component {
           });
     }
 
+    addGuest(user_name, rsvp) {
+        //format 
+        fetch('/rsvp/addGuest', {
+            method: 'post',
+            body: JSON.stringify({
+                "user_name": user_name,
+                "rsvp" : rsvp,
+                //the RSVP is not resolved yet, it was tested with 'false' as default. But when the user is created it's default must be 'undefined' or other that will not break the code.
+            }),
+            headers: {
+                "Content-Type": "application/json"
+              },
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          this.setState({
+          guestArray: responseJson,
+          });
+        })
+        .catch((error) =>{
+            console.error('Possible fetch error',error);
+          });
+        console.log(this.state.todosArray)
+    }
+
     //Function to delete a user from the DB (unfinished)
 
     // deleteGuest(id) {
