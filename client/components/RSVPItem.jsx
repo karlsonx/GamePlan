@@ -4,7 +4,7 @@ const RSVPItem = props => {
 
     return (
         <div>
-            {props.Name}
+            {props.user_name}
             <button >Yes</button>
             <button >No</button>
         </div>
