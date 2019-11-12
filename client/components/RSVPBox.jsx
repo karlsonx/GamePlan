@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import RSVPItem from './RSVPItem.jsx';
+import React, { Component } from "react";
+import RSVPItem from "./RSVPItem.jsx";
 
 class RSVPBox extends Component {
     constructor(props) {
